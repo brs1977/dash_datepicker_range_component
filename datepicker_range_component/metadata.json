@@ -1,0 +1,37 @@
+{
+  "src/lib/components/DatepickerRange.react.js": {
+    "description": "",
+    "displayName": "DatepickerRange",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The ID used to identify this component in Dash callbacks."
+      },
+      "startDate": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "A startDate that will be printed when this component is rendered."
+      },
+      "endDate": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "A endDate that will be printed when this component is rendered."
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash-assigned callback that should be called to report property changes\r\nto Dash, to make them available for callbacks."
+      }
+    }
+  }
+}

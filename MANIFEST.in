@@ -1,0 +1,7 @@
+include datepicker_range_component/datepicker_range_component.min.js
+include datepicker_range_component/datepicker_range_component.min.js.map
+include datepicker_range_component/metadata.json
+include datepicker_range_component/package-info.json
+include README.md
+include LICENSE
+include package.json
