@@ -28,7 +28,7 @@ export default class DatepickerRange extends Component {
 
         return (
         <IntlProvider locale={ruRU} formatDate={formatDate}>
-            <div id={id} className="field">
+            <div id={id} className={className}>
 
                 <DateRangePicker
 
@@ -87,6 +87,11 @@ DatepickerRange.propTypes = {
      * The ID used to identify this component in Dash callbacks.
      */
     id: PropTypes.string,
+
+    /**
+     * A className that will be printed when this component is rendered.
+     */
+    className: PropTypes.string,
 
     /**
      * A startDate that will be printed when this component is rendered.
