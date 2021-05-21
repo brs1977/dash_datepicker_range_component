@@ -1,6 +1,6 @@
 // @flow
 
-import { addDays,parseISO } from 'date-fns';
+import { addDays,parseISO,formatISO } from 'date-fns';
 import 'rsuite/dist/styles/rsuite-default.css'
 import React, {Component} from 'react';
 import { DateRangePicker,IntlProvider } from 'rsuite'; 
@@ -11,9 +11,8 @@ import format from 'date-fns/format';
 
 
 function formatDate(data, formatStr) {
-    if (typeof(data) === 'string')
+    if (typeof(data) === 'string')        
         data = parseISO(data)
-    console.log(data)
     // fix YYYY to yyyy and DD to dd 
     return format(data, formatStr.replace("YYYY", "yyyy").replace("DD","dd"), { locale: ru });
 }
@@ -28,7 +27,7 @@ export default class DatepickerRange extends Component {
 
         return (
         <IntlProvider locale={ruRU} formatDate={formatDate}>
-            <div id={id} className={className}>
+            <div id={id} className="mypicker">
 
                 <DateRangePicker
 
@@ -70,8 +69,9 @@ export default class DatepickerRange extends Component {
                     value={[ startDate, endDate]}
                     onChange={value => {
                     //   this.setState({ value });
-                      setProps({ startDate: value[0].toISOString(), endDate: value[1].toISOString() })
-                      console.log(value);
+                    //   console.log('iso ',formatISO(value[0]));
+                      setProps({ startDate: formatISO(value[0]), endDate: formatISO(value[1]) })
+                    //   console.log(value);
                     }}                    
                 /> 
             </div>
@@ -88,10 +88,6 @@ DatepickerRange.propTypes = {
      */
     id: PropTypes.string,
 
-    /**
-     * A className that will be printed when this component is rendered.
-     */
-    className: PropTypes.string,
 
     /**
      * A startDate that will be printed when this component is rendered.
